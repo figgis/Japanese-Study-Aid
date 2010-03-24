@@ -1,0 +1,60 @@
+OK, lets face it, Japanese is hard!
+So I figured I need to collect stuff into a format that allows me to
+practice on the bus, train, while watching TV, drinking beer and so
+on. 
+
+First attempt was made using sphinx and python. The html-looks great
+but the latex/pdf-generation failed due to that sphinx doesn't
+support multi-row-columns; big show stopper!
+
+Second attempt (this one) generates LaTeX-directly and the output
+looks, well perhaps not perfect, but its a start at least and it
+allows me to bring the printed version with me; I can even cut out
+the different tables and use them as Q-cards...
+
+The file-structure is a chaotic mix of sphinx and LaTeX right now,
+hopefully that will change soon :-)
+
+./ 
+contains sphinx-stuff, the *.rst-files, obsolete sort of...
+
+./python
+    mt.py
+    short for MakeTable, main program that generate both
+    sphinx-tables as well as LaTeX-dito. Using data.pkl provided by...
+
+    create_jpn_db.py
+    which contains an array with all verbs and adjectives and their
+    conjugations.
+
+    create_i_adj.py
+    helper function to automatically generate i-adjective from the
+    stem of the word.
+
+    data.pkl
+    pickled db
+
+./latex
+    try.tex
+    LaTeX template. The output from mt.py basically goes in between
+    \begin{document} and \end{document}
+
+    generate doc with:
+    $ xelatex try.tex
+
+./doc
+    jpn.pdf
+    the generated document
+
+TODO (in no particular order)
+=============================
+* Add more verbs/adjectives etc.
+* Clean up the messy structure
+* Automate the latex generation
+* Auto-generate conjugation for as much as possible instead of
+  writing it by hand!
+* Fix the .encode('utf-8') mess ie. as in create_i_adj.py
+* Some more clever latex trix to generate a Q-card that when
+  folded in the middle contains the kanji/kana dictionary form
+  and on the other side the conjugations
+
