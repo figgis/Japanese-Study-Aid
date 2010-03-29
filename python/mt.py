@@ -104,6 +104,45 @@ def make_latex_table(verb):
     print h
 #    print r'\clearpage'
 
+def make_latex_table_na_adj(verb):
+    '''latex table'''
+    h=r'''
+\begin{table}[ht]
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|l|l|l|l|}
+  \hline
+  \multicolumn{4}{|c|}{} \\
+  \multicolumn{4}{|c|}{\huge{@0}} \\
+  \multicolumn{4}{|c|}{} \\
+  \hline
+  \multicolumn{4}{|c|}{@1} \\
+  \hline
+  \multicolumn{2}{|l}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
+  \hline
+  Present & Plain   & @2 & @3 \\
+          & Polite  & @4 & @5 \\
+  \hline
+  Past    & Plain   & @6 & @7 \\
+          & Polite  & @8 & @9 \\
+  \hline
+  \end{tabular}}
+\end{table}'''
+
+#    s = '\subsubsection{%s}' % (verb[2])
+#    print 
+#    print s.encode('utf-8')
+#    print 
+
+    for i in range(1,len(verb)):
+        h=h.replace('@'+str(i),verb[i].encode('utf-8'))
+
+    #print verb[2][:-1]
+    h=h.replace('@0',verb[2][:-1].encode('utf-8'))
+
+
+    print h
+#    print r'\clearpage'
+
 def make_latex_table_i_adj(verb):
     '''latex table'''
     h=r'''
@@ -158,6 +197,25 @@ def make_latex_subsection(s):
     print '\subsection{%s}' % (s)
     print
 
+def latex_list_all():
+    '''list'''
+    h=r'''
+\begin{table}[ht]
+  begin{tabular}{ll}
+'''
+    make_latex_section('List')
+    print h
+    l=len(list)
+    if l%2!=0:
+        pad=True
+    for i in range(0,l/2):
+        print list[i].encode('utf-8'), '&', list[i+1].encode('utf-8'), '\n'
+    if pad:
+        print '&'
+
+    print r'\end{tabular}'
+    print r'\end{table}'
+
 pkl_file = open('data.pkl', 'rb')
 list = pickle.load(pkl_file)
 #pprint.pprint(list)
@@ -191,7 +249,7 @@ make_latex_section('Adjektiv')
 make_latex_subsection('な-adjektiv')
 for i in list:
     if i[0]==u'na-adjektiv':
-        make_latex_table(i)
+        make_latex_table_na_adj(i)
 print r'\clearpage'
 
 #i-adjektiv
@@ -200,6 +258,8 @@ for i in list:
     if i[0]==u'i-adjektiv':
         make_latex_table_i_adj(i)
 print r'\clearpage'
+
+#latex_list_all()
 
 #print 'Number of items:', len(list)
 
