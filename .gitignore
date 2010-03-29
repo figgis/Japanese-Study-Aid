@@ -5,4 +5,5 @@ notes
 latex/
 *.pyc
 *.sw?
+*.style
 
