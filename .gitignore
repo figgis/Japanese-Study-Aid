@@ -1,3 +1,9 @@
 *~
 _build/
+tmp/
 notes
+latex/
+*.pyc
+*.sw?
+*.style
+
