@@ -14,14 +14,6 @@ from latex_template import *
 
 # up until the first cell to fill with data
 WIDTH_1ST=29
-d=u'-' #dash
-p=u'+' #plus
-b=u'|' #bar
-e=u'=' #equal
-wc0=0  #width column 0
-wc1=0  #width column 1
-wch=0  #width column header
-wcs=0  #width column section
 
 def width(string):
     return sum(1+(unicodedata.east_asian_width(unicode(c)) in "WF")
@@ -97,45 +89,6 @@ def make_latex_table_na_adj(verb):
 
     out.write(h)
 
-def make_latex_table_na_adj(verb):
-    '''latex table'''
-    h=r'''
-\begin{table}[ht]
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{|l|l|l|l|}
-  \hline
-  \multicolumn{4}{|c|}{} \\
-  \multicolumn{4}{|c|}{\huge{@0}} \\
-  \multicolumn{4}{|c|}{} \\
-  \hline
-  \multicolumn{4}{|c|}{@1} \\
-  \hline
-  \multicolumn{2}{|l}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
-  \hline
-  Present & Plain   & @2 & @3 \\
-          & Polite  & @4 & @5 \\
-  \hline
-  Past    & Plain   & @6 & @7 \\
-          & Polite  & @8 & @9 \\
-  \hline
-  \end{tabular}}
-\end{table}'''
-
-#    s = '\subsubsection{%s}' % (verb[2])
-#    print 
-#    print s.encode('utf-8')
-#    print 
-
-    for i in range(1,len(verb)):
-        h=h.replace('@'+str(i),verb[i].encode('utf-8'))
-
-    #print verb[2][:-1]
-    h=h.replace('@0',verb[2][:-1].encode('utf-8'))
-
-
-    print h
-#    print r'\clearpage'
-
 def make_latex_table_i_adj(verb):
     '''latex table'''
 
@@ -181,69 +134,37 @@ def latex_list_all():
     print r'\end{tabular}'
     print r'\end{table}'
 
-def latex_list_all():
-    '''list'''
-    h=r'''
-\begin{table}[ht]
-  begin{tabular}{ll}
-'''
-    make_latex_section('List')
-    print h
-    l=len(list)
-    if l%2!=0:
-        pad=True
-    for i in range(0,l/2):
-        print list[i].encode('utf-8'), '&', list[i+1].encode('utf-8'), '\n'
-    if pad:
-        print '&'
-
-    print r'\end{tabular}'
-    print r'\end{table}'
+###############################################################
 
 pkl_file = open('data.pkl', 'rb')
 list = pickle.load(pkl_file)
-#pprint.pprint(list)
 pkl_file.close()
 
 out.write(latex_pre)
+out.flush()
 
 make_latex_section(u'Verb')
 
-make_latex_subsection(u'Irregular')
-#irregular
-for i in list:
-    if i[0]==u'irregular':
-        make_latex_table(i)
-out.write(ur'\clearpage')
+for i,j in zip(['Irregular', 'RU-verbs', 'U-verbs'], ['irregular', 'ru', 'u']):
+    make_latex_subsection(i)
+    for k in list:
+        if k[0]==j:
+            make_latex_table(k)
+    out.write(ur'\clearpage')
+    out.flush()
 
-make_latex_subsection(u'RU-verbs')
-#ru-verbs
-for i in list:
-    if i[0]==u'ru':
-        make_latex_table(i)
-out.write(ur'\clearpage')
 
-make_latex_subsection(u'U-verbs')
-#u-verbs
-for i in list:
-    if i[0]==u'u':
-        make_latex_table(i)
-out.write(ur'\clearpage')
+make_latex_section(u'Adjektiv')
 
-#na-adjektiv
-make_latex_section('Adjektiv')
-make_latex_subsection(u'な-adjektiv')
-for i in list:
-    if i[0]==u'na-adjektiv':
-        make_latex_table_na_adj(i)
-out.write(ur'\clearpage')
-
-#i-adjektiv
-make_latex_subsection(u'い-adjektiv')
-for i in list:
-    if i[0]==u'i-adjektiv':
-        make_latex_table_i_adj(i)
-out.write(ur'\clearpage')
+for i,j in zip(['な-adjektiv', 'い-adjektiv'], ['na-adjektiv', 'i-adjektiv']):
+    make_latex_subsection(i)
+    for k in list:
+        if k[0]==j:
+            make_latex_table_na_adj(k)
+        elif k[0]==j:
+            make_latex_table_i_adj(k)
+    out.write(ur'\clearpage')
+    out.flush()
 
 out.write(latex_post)
 
