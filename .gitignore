@@ -6,4 +6,9 @@ latex/
 *.pyc
 *.sw?
 *.style
+*.aux
+*.log
+*.toc
+*.tex
+log
 
