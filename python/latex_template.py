@@ -7,6 +7,19 @@ import unicodedata
 
 out = codecs.getwriter('utf-8')(sys.stdout)
 
+summary_pre=r'''
+\begin{table}[ht]
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllll}
+'''
+
+summary_post=r'''
+  \end{tabular}}
+\end{table}
+'''
+
+
+
 verb_table=r'''
 \begin{table}[ht]
   \resizebox{\textwidth}{!}{%

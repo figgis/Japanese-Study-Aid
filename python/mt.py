@@ -66,6 +66,23 @@ class JPN:
                         word.gen_table()
                 out.write(ur'\clearpage')
 
+        # create summary
+        out.write('\n')
+        out.write(r'\newpage')
+        make_latex_section('Summary')
+        out.write(summary_pre)
+        for i,v in enumerate(self.data):
+            out.write(v.head)
+            if i>0 and (i+1)%5==0:
+                out.write(r'\\')
+                out.write('\n')
+            else:
+                out.write('&')
+
+        out.write('\n')
+        out.write(summary_post)
+
+
         out.write(latex_post)
 #-------------------------------------------------------------------
 class Word():                   # base class
@@ -84,6 +101,7 @@ class verb(Word):               # verbs
     def __init__(self,type,data):
         self.type=type
         self.data=data
+        self.head=data[2]
 
     def gen_table(self):
         h=verb_table
@@ -97,6 +115,7 @@ class ia(Word):                 # i adj
     def __init__(self,type,data):
         self.type=type
         self.data=data
+        self.head=data[2]
 
     def gen_table(self):
         h=i_table
@@ -110,6 +129,8 @@ class naa(Word):                 # na adj
     def __init__(self,type,data):
         self.type=type
         self.data=data
+        self.head=data[2][:-1]
+
 
     def gen_table(self):
         h=na_table
