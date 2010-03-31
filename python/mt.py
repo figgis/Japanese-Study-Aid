@@ -47,11 +47,11 @@ class JPN:
     def make_latex(self):
         out.write(latex_pre)
 
-        l0=['Verb', 'Adjektiv']
-        l1=['Irregular','RU-verbs', 'U-verbs']
-        l2=['irregular', 'ru', 'u']
-        l3=['な-adjektiv', 'い-adjektiv']
-        l4=['na-adjektiv', 'i-adjektiv']
+        l0=[u'Verb', u'Adjektiv']
+        l1=[u'Irregular',u'RU-verbs', u'U-verbs']
+        l2=[u'irregular', u'ru', u'u']
+        l3=[u'な-adjektiv', u'い-adjektiv']
+        l4=[u'na-adjektiv', u'i-adjektiv']
 
         dic={}
         dic['Verb']=[l1,l2]
@@ -77,7 +77,7 @@ class JPN:
                 out.write(r'\\')
                 out.write('\n')
             else:
-                out.write('&')
+                out.write(' & ')
 
         out.write('\n')
         out.write(summary_post)
