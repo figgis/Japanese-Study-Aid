@@ -12,9 +12,6 @@ looks, well perhaps not perfect, but its a start at least and it
 allows me to bring the printed version with me; I can even cut out
 the different tables and use them as Q-cards...
 
-The file-structure is a chaotic mix of sphinx and LaTeX right now,
-hopefully that will change soon :-)
-
 ./python
     mt.py
     short for MakeTable, main program that generates
