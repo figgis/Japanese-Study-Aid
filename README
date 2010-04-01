@@ -15,7 +15,7 @@ the different tables and use them as Q-cards...
 ./python
     mt.py
     short for MakeTable, main program that generates
-    LaTeX-tables. Using data.pkl provided by...
+    LaTeX-tables. 
 
     create_jpn_db.py
     which contains an array with all verbs and adjectives and their
