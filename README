@@ -15,13 +15,10 @@ the different tables and use them as Q-cards...
 The file-structure is a chaotic mix of sphinx and LaTeX right now,
 hopefully that will change soon :-)
 
-./ 
-contains sphinx-stuff, the *.rst-files, obsolete sort of...
-
 ./python
     mt.py
-    short for MakeTable, main program that generate both
-    sphinx-tables as well as LaTeX-dito. Using data.pkl provided by...
+    short for MakeTable, main program that generates
+    LaTeX-tables. Using data.pkl provided by...
 
     create_jpn_db.py
     which contains an array with all verbs and adjectives and their
@@ -31,13 +28,8 @@ contains sphinx-stuff, the *.rst-files, obsolete sort of...
     helper function to automatically generate i-adjective from the
     stem of the word.
 
-    data.pkl
-    pickled db
-
-./latex
-    try.tex
-    LaTeX template. The output from mt.py basically goes in between
-    \begin{document} and \end{document}
+    latex_template.py
+    well, the templates
 
     generate doc with:
     $ xelatex try.tex
@@ -46,14 +38,16 @@ contains sphinx-stuff, the *.rst-files, obsolete sort of...
     jpn.pdf
     the generated document
 
+generate doc with:
+$./mt.py > jpn.tex
+$ xelatex jpn.tex
+
 TODO (in no particular order)
 =============================
 * Add more verbs/adjectives etc.
 * Clean up the messy structure
-* Automate the latex generation
 * Auto-generate conjugation for as much as possible instead of
   writing it by hand!
-* Fix the .encode('utf-8') mess ie. as in create_i_adj.py
 * Some more clever latex trix to generate a Q-card that when
   folded in the middle contains the kanji/kana dictionary form
   and on the other side the conjugations

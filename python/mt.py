@@ -6,10 +6,11 @@ import pickle
 import os
 import sys
 import codecs
+from latex_template import *
+from create_jpn_db import JpnDB
 
 out = codecs.getwriter('utf-8')(sys.stdout)
 
-from latex_template import *
 
 #Helper function
 def printheader(word):
@@ -170,12 +171,14 @@ def make_latex_subsection(s):
 
 ###############################################################
 
-pkl_file = open('data.pkl', 'rb')
-list = pickle.load(pkl_file)
-pkl_file.close()
+#pkl_file = open('data.pkl', 'rb')
+#list = pickle.load(pkl_file)
+#pkl_file.close()
+
+db=JpnDB()
 
 x=JPN()
-for i in list:
+for i in db.list:
     x.add(i)
 
 x.make_latex()
