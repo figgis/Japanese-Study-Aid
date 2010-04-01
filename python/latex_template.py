@@ -31,7 +31,7 @@ verb_table=r'''
   \hline
   \multicolumn{4}{|c|}{@1} \\
   \hline
-  \multicolumn{2}{|l}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
+  \multicolumn{2}{|l|}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
   \hline
   Present & Plain   & @2 & @3 \\
           & Polite  & @4 & @5 \\
@@ -54,7 +54,7 @@ na_table=r'''
   \hline
   \multicolumn{4}{|c|}{@1} \\
   \hline
-  \multicolumn{2}{|l}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
+  \multicolumn{2}{|l|}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
   \hline
   Present & Plain   & @2 & @3 \\
           & Polite  & @4 & @5 \\
@@ -77,7 +77,7 @@ i_table=r'''
   \hline
   \multicolumn{4}{|c|}{@1-} \\
   \hline
-  \multicolumn{2}{|l}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
+  \multicolumn{2}{|l|}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
   \hline
   Present & Plain   & @2- & @3- \\
           & Polite  & @4- & @5- \\
@@ -94,12 +94,7 @@ i_table=r'''
 tmp=r'''
 \documentclass{article}
 \usepackage{fontspec}
-%\usepackage{multirow}
-\usepackage{graphicx}
-\usepackage{colortbl}
-%\usepackage{slashbox}
 \usepackage{ctable}
-\usepackage[table, x11names]{xcolor}
 \setmainfont{Sazanami Mincho}
 
 \title{\huge{日本語}}

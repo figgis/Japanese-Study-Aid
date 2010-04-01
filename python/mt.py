@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 import unicodedata
-import pickle
 import os
 import sys
 import codecs
@@ -171,10 +170,6 @@ def make_latex_subsection(s):
 
 ###############################################################
 
-#pkl_file = open('data.pkl', 'rb')
-#list = pickle.load(pkl_file)
-#pkl_file.close()
-
 db=JpnDB()
 
 x=JPN()
@@ -185,4 +180,3 @@ x.make_latex()
 
 
 # vim: set fileencoding=utf-8  encoding=utf-8 expandtab:
-
