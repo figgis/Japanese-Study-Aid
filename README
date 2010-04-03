@@ -10,7 +10,7 @@ support multi-row-columns; big show stopper!
 Second attempt (this one) generates LaTeX-directly and the output
 looks, well perhaps not perfect, but its a start at least and it
 allows me to bring the printed version with me; I can even cut out
-the different tables and use them as Q-cards...
+the different tables and use them as flash-cards...
 
 ./python
     mt.py
@@ -28,16 +28,14 @@ the different tables and use them as Q-cards...
     latex_template.py
     well, the templates
 
-    generate doc with:
-    $ xelatex try.tex
-
 ./doc
     jpn.pdf
     the generated document
 
 generate doc with:
-$./mt.py > jpn.tex
-$ xelatex jpn.tex
+$ cd python
+$ make
+$ make view
 
 TODO (in no particular order)
 =============================
@@ -45,7 +43,7 @@ TODO (in no particular order)
 * Clean up the messy structure
 * Auto-generate conjugation for as much as possible instead of
   writing it by hand!
-* Some more clever latex trix to generate a Q-card that when
+* Some more clever latex trix to generate a flashcard that when
   folded in the middle contains the kanji/kana dictionary form
   and on the other side the conjugations
 

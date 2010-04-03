@@ -7,5 +7,10 @@ main:
 copy:
 	cp $(TEXFILE:.tex=.pdf) ../doc/jpn.pdf
 
+view:
+	evince $(TEXFILE:.tex=.pdf)
+
 clean :
-	rm *.log *.toc *.aux *.pdf
+	rm -f *.tex *.log *.toc *.aux *.pdf *~ 
+
+
