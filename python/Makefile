@@ -3,6 +3,7 @@ TEXFILE = tmp.tex
 main:
 	./mt.py > $(TEXFILE)
 	xelatex $(TEXFILE)
+	xelatex $(TEXFILE)        # run it twice
 
 copy:
 	cp $(TEXFILE:.tex=.pdf) ../doc/jpn.pdf

@@ -91,10 +91,11 @@ class Word():                   # base class
         pass
 
     def show(self):
-        printheader(self.type)
+        #printheader(self.type)
         for i in self.data:
             out.write(i)
             out.write('\n')
+        out.write('\n')
 #-------------------------------------------------------------------
 class verb(Word):               # verbs
     '''derived'''
@@ -177,6 +178,5 @@ for i in db.list:
     x.add(i)
 
 x.make_latex()
-
 
 # vim: set fileencoding=utf-8  encoding=utf-8 expandtab:
