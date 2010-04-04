@@ -18,15 +18,17 @@ the different tables and use them as flash-cards...
     LaTeX-tables. 
 
     create_jpn_db.py
-    which contains an array with all verbs and adjectives and their
-    conjugations.
+    reads list.txt and creates the structure.
 
     create_i_adj.py
     helper function to automatically generate i-adjective from the
     stem of the word.
 
     latex_template.py
-    well, the templates
+    well, the templates.
+
+    list.txt
+    This is where all the words are entered.
 
 ./doc
     jpn.pdf
@@ -40,7 +42,6 @@ $ make view
 TODO (in no particular order)
 =============================
 * Add more verbs/adjectives etc.
-* Clean up the messy structure
 * Auto-generate conjugation for as much as possible instead of
   writing it by hand!
 * Some more clever latex trix to generate a flashcard that when
