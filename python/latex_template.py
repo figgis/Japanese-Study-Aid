@@ -4,6 +4,7 @@
 import sys
 import codecs
 import unicodedata
+from string import Template
 
 out = codecs.getwriter('utf-8')(sys.stdout)
 
@@ -18,30 +19,30 @@ summary_post=r'''
 \end{table}
 '''
 
-
-
-verb_table=r'''
+verb_table_template=Template(r'''
 \begin{table}[ht]
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{|l|l|l|l|}
   \hline
   \multicolumn{4}{|c|}{} \\
-  \multicolumn{4}{|c|}{\huge{@2}} \\
+  \multicolumn{4}{|c|}{\huge{$title}} \\
   \multicolumn{4}{|c|}{} \\
   \hline
-  \multicolumn{4}{|c|}{@1} \\
+  \multicolumn{4}{|c|}{$head} \\
   \hline
-  \multicolumn{2}{|l|}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
+  \multicolumn{2}{|c|}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
   \hline
-  Present & Plain   & @2 & @3 \\
-          & Polite  & @4 & @5 \\
+  Present & Plain   & $pres_plain_pos  & $pres_plain_neg \\
+          & Polite  & $pres_polite_pos & $pres_polite_neg \\
   \hline
-  Past    & Plain   & @6 & @7 \\
-          & Polite  & @8 & @9 \\
+  Past    & Plain   & $past_plain_pos & $past_plain_neg \\
+          & Polite  & $past_polite_pos & $past_polite_neg \\
+  \hline
+  \multicolumn{2}{|c}{Te-Form} & \multicolumn{2}{|c|}{$te_form} \\
   \hline
   \end{tabular}}
 \end{table}
-'''
+''')
 
 na_table=r'''
 \begin{table}[ht]

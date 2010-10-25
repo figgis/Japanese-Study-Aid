@@ -19,7 +19,7 @@ class JpnDB:
     def __populate(self):
         fp=open(self.f_name)
         tmp=[]
-        
+
         for line in fp:
             if '#' in line: # skip comments
                 continue
@@ -39,7 +39,7 @@ class JpnDB:
 
     def verify(self):
         for i in self.list:
-            out.write('%s\t%s\n' % (len(i), i[1].split('-')[-1]))
+            out.write('%s\t%s\n' % (len(i), i[-1]))
 
         out.write('\nTotal number of items: %d\n' % len(self.list))
 
