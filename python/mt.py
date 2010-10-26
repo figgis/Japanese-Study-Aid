@@ -8,6 +8,7 @@ import codecs
 from latex_template import *
 from create_jpn_db import JpnDB
 from verb_conjugator import *
+from adjective_conjugator import *
 
 out = codecs.getwriter('utf-8')(sys.stdout)
 
@@ -31,15 +32,21 @@ class JPN:
     def add(self,x):
         if x[0]=='irregular':
             tmp=verb(x[0],x)
-        if x[0]=='u':
+            self.data.append(tmp)
+        elif x[0]=='u':
             tmp=verb(x[0],x)
-        if x[0]=='ru':
+            self.data.append(tmp)
+        elif x[0]=='ru':
             tmp=verb(x[0],x)
-        if x[0]=='na-adjektiv':
+            self.data.append(tmp)
+        elif x[0]=='na-adjektiv':
             tmp=naa(x[0],x)
-        if x[0]=='i-adjektiv':
+            self.data.append(tmp)
+        elif x[0]=='i-adjektiv':
             tmp=ia(x[0],x)
-        self.data.append(tmp)
+            self.data.append(tmp)
+        else:
+            pass
 
     def show(self):
         for i in self.data:
@@ -61,11 +68,19 @@ class JPN:
         for sec in l0:      # section
             make_latex_section(sec)
             for i,j in zip(dic[sec][0],dic[sec][1]):
+#                out.write('\n')
+#                out.write(r'\clearpage')
+#                out.write('\n')
+#                out.write(r'\newpage')
+#                out.write('\n')
                 make_latex_subsection(i)
+                i = 0
                 for word in self.data:
                     if word.kind==j:
                         word.gen_table()
-                out.write(ur'\clearpage')
+                        if i%10 == 0:
+                            out.write(ur'\clearpage')
+                        i += 1
 
         # create summary
         out.write('\n')
@@ -73,7 +88,7 @@ class JPN:
         make_latex_section('Summary')
         out.write(summary_pre)
         for i,v in enumerate(self.data):
-            out.write(v.head)
+            #out.write(v.head)
             if i>0 and (i+1)%5==0:
                 out.write(r'\\')
                 out.write('\n')
@@ -105,11 +120,10 @@ class verb(Word):               # verbs
         self.conjugation = conjugate_verb(kind, data[1])
         self.conjugation['title'] = self.conjugation['dict_form']
         self.conjugation['head'] = data[-2] + u' - ' + data[-1]
-        self.head=data[1]
 
     def gen_table(self):
-        #s = verb_table_template.safe_substitute(self.conjugation)
-        s = verb_table_template.substitute(self.conjugation)
+        s = verb_table_template.safe_substitute(self.conjugation)
+        #s = verb_table_template.substitute(self.conjugation)
         out.write(s)
 #-------------------------------------------------------------------
 class ia(Word):                 # i adj
@@ -117,31 +131,26 @@ class ia(Word):                 # i adj
     def __init__(self,kind,data):
         self.kind=kind
         self.data=data
-        self.head=data[2]
+        self.conjugation= conjugate_adjective(kind, data[1])
+        self.conjugation['title'] = self.conjugation['dict_form']
+        self.conjugation['head'] = data[-2] + u' - ' + data[-1]
 
     def gen_table(self):
-        h=i_table
-        for i in range(1,len(self.data)):
-            h=h.replace('@'+str(i)+'-',self.data[i])
-
-        out.write(h)
+        s = i_table_template.safe_substitute(self.conjugation)
+        out.write(s)
 #-------------------------------------------------------------------
 class naa(Word):                 # na adj
     '''derived'''
     def __init__(self,kind,data):
         self.kind=kind
         self.data=data
-        self.head=data[2][:-1]
-
+        self.conjugation= conjugate_adjective(kind, data[1])
+        self.conjugation['title'] = self.conjugation['dict_form']
+        self.conjugation['head'] = data[-2] + u' - ' + data[-1]
 
     def gen_table(self):
-        h=na_table
-        for i in range(1,len(self.data)):
-            h=h.replace('@'+str(i),self.data[i])
-
-        h=h.replace('@0',self.data[2][:-1])
-
-        out.write(h)
+        s = na_table_template.safe_substitute(self.conjugation)
+        out.write(s)
 
 #-------------------------------------------------------------------
 def width(string):

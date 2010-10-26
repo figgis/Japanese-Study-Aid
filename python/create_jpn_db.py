@@ -10,7 +10,7 @@ out = codecs.getwriter('utf-8')(sys.stdout)
 
 class JpnDB:
     '''data-base'''
-    def __init__(self,f_name='list.txt'):
+    def __init__(self,f_name='verb_list'):
         self.list=[]
         self.f_name=f_name
 
@@ -40,7 +40,6 @@ class JpnDB:
     def verify(self):
         for i in self.list:
             out.write('%s\t%s\n' % (len(i), i[-1]))
-
         out.write('\nTotal number of items: %d\n' % len(self.list))
 
 def main():
