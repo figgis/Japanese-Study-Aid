@@ -66,13 +66,14 @@ class JPN:
         dic['Adjektiv']=[l3,l4]
 
         for sec in l0:      # section
+            out.write(r'\clearpage')
             make_latex_section(sec)
             for i,j in zip(dic[sec][0],dic[sec][1]):
-#                out.write('\n')
-#                out.write(r'\clearpage')
-#                out.write('\n')
-#                out.write(r'\newpage')
-#                out.write('\n')
+                out.write('\n')
+                out.write(r'\clearpage')
+                out.write('\n')
+                out.write(r'\newpage')
+                out.write('\n')
                 make_latex_subsection(i)
                 i = 0
                 for word in self.data:
@@ -85,10 +86,11 @@ class JPN:
         # create summary
         out.write('\n')
         out.write(r'\newpage')
+        out.write(r'\clearpage')
         make_latex_section('Summary')
         out.write(summary_pre)
         for i,v in enumerate(self.data):
-            #out.write(v.head)
+            out.write(v.conjugation['title'])
             if i>0 and (i+1)%5==0:
                 out.write(r'\\')
                 out.write('\n')

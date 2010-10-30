@@ -67,29 +67,6 @@ na_table_template=Template(r'''
 \end{table}
 ''')
 
-na_table=r'''
-\begin{table}[ht]
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{|l|l|l|l|}
-  \hline
-  \multicolumn{4}{|c|}{} \\
-  \multicolumn{4}{|c|}{\huge{@0}} \\
-  \multicolumn{4}{|c|}{} \\
-  \hline
-  \multicolumn{4}{|c|}{@1} \\
-  \hline
-  \multicolumn{2}{|l|}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
-  \hline
-  Present & Plain   & @2 & @3 \\
-          & Polite  & @4 & @5 \\
-  \hline
-  Past    & Plain   & @6 & @7 \\
-          & Polite  & @8 & @9 \\
-  \hline
-  \end{tabular}}
-\end{table}
-'''
-
 i_table_template=Template(r'''
 \begin{table}[ht]
   \resizebox{\textwidth}{!}{%
@@ -114,31 +91,6 @@ i_table_template=Template(r'''
   \end{tabular}}
 \end{table}
 ''')
-
-i_table=r'''
-\begin{table}[ht]
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{|l|l|l|l|}
-  \hline
-  \multicolumn{4}{|c|}{} \\
-  \multicolumn{4}{|c|}{\huge{@2-}} \\
-  \multicolumn{4}{|c|}{} \\
-  \hline
-  \multicolumn{4}{|c|}{@1-} \\
-  \hline
-  \multicolumn{2}{|l|}{\textbf{Form}} & \textbf{Positive} & \textbf{Negative} \\
-  \hline
-  Present & Plain   & @2- & @3- \\
-          & Polite  & @4- & @5- \\
-          &         &     & @6- \\
-  \hline
-  Past    & Plain   & @7- & @8-  \\
-          & Polite  & @9- & @10- \\
-          &         &     & @11- \\
-  \hline
-  \end{tabular}}
-\end{table})
-'''
 
 tmp=r'''
 \documentclass{article}

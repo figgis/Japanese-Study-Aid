@@ -1,22 +1,3 @@
-na-adjektiv
-暇
-ひま（な
-not busy; to have a lot of free time
-
-na-adjektiv
-大変（な
-tough (situation)
-
-i-adjektiv
-いい
-good
-
-i-adjektiv
-はやい
-early
-
-#----------------
-
 u
 行く
 いく
@@ -261,325 +242,615 @@ irregular
 もってくる
 to bring (a thing)
 
-#u
-#歌う
-#うたう
-#to sing
-#
-#u
-#かぶる
-#to put on (a hat)
-#
-#u
-#知る
-#しる
-#to get to know
-#
-#u
-#住む
-#すむ
-#to live
-#
-#u
-#はく
-#to put on (items below your waist)
-#
-#u
-#太る
-#ふとる
-#to gain weight
-#
-#u
-#太っています
-#ふとっています
-#to be on the heavy side
-#
-#ru
-#めがねをかける
-#to put on glasses
-#
-#ru
-#着る
-#きる
-#to put on (clothes above your waist)
-#
+u
+歌う
+うたう
+to sing
+
+u
+かぶる
+to put on (a hat)
+
+u
+知る
+しる
+to get to know
+
+u
+住む
+すむ
+to live
+
+u
+はく
+to put on (items below your waist)
+
+u
+太る
+ふとる
+to gain weight
+
+u
+太っています
+ふとっています
+to be on the heavy side
+
+ru
+めがねをかける
+to put on glasses
+
+ru
+着る
+きる
+to put on (clothes above your waist)
+
 #ra type
 #tsutomeru
 #to work for
 #
-#ru
-#やせる
-#to lose weight
-#
-#ru
-#やせています
-#to be thin
-#
-#irregular
-#結婚する
-#けっこんする
-#to get married
-#
+ru
+やせる
+to lose weight
+
+ru
+やせています
+to be thin
+
+irregular
+結婚する
+けっこんする
+to get married
+
 #u type
 #amegafuru
 #it rains
 #
-#u
-#洗う
-#あらう
-#to wash
-#
-#u
-#言う
-#いう
-#to say
-#
-#u
-#いる
-#to need
-#
-#u
-#遅くなる
-#おそくなる
-#to be late (for ...)
-#
-#u
-#思う
-#おもう
-#to think
-#
-#u
-#切る
-#きる
-#to cut
-#
-#u
-#作る
-#つくる
-#to make
-#
-#u
-#持っていく
-#もっていく
-#to take (something)
-#
-#ru
-#じろじろ見る
-#じろじろみる
-#to stare (at ...)
-#
-#ru
-#始める
-#はじめる
-#to begin
-#
-#irregular
-#運転する
-#うんてんする
-#to drive
-#
-#irregular
-#洗濯する
-#せんたくする
-#to do laundry
-#
-#irregular
-#掃除する
-#そうじする
-#to clean
-#
-#irregular
-#料理する
-#りょうりする
-#to cook
-#
-#u
-#踊る
-#おどる
-#to dance
-#
+u
+洗う
+あらう
+to wash
+
+u
+言う
+いう
+to say
+
+u
+いる
+to need
+
+u
+遅くなる
+おそくなる
+to be late (for ...)
+
+u
+思う
+おもう
+to think
+
+u
+切る
+きる
+to cut
+
+u
+作る
+つくる
+to make
+
+u
+持っていく
+もっていく
+to take (something)
+
+ru
+じろじろ見る
+じろじろみる
+to stare (at ...)
+
+ru
+始める
+はじめる
+to begin
+
+irregular
+運転する
+うんてんする
+to drive
+
+irregular
+洗濯する
+せんたくする
+to do laundry
+
+irregular
+掃除する
+そうじする
+to clean
+
+irregular
+料理する
+りょうりする
+to cook
+
+u
+踊る
+おどる
+to dance
+
 #u type
 #åwaru
 #(something) ends
-#
-#u
-#人気がある
-#にんきがある
-#to be popular
-#
+
+u
+人気がある
+にんきがある
+to be popular
+
 #u type
 #(something) begins
-#
-#u
-#弾く
-#ひく
-#to play (a string instrument or piano)
-#
-#u
-#もらう
-#to get (from somebody)
-#
-#ru
-#覚える
-#おぼえる
-#to memorize
-#
-#ru
-#出る
-#でる
-#(1) to appear; to attend (2) to exit
-#
-#irregular
-#運動する
-#うんどうする
-#to do physical exercises
-#
-#irregular
-#散歩する
-#さんぽする
-#to take a walk
-#
-#u
-#かかる
-#to take (amount of time / money)
-#
-#u
-#泊まる
-#とまる
-#to stay (at a hotel, etc.)
-#
-#u
-#なる
-#to become
-#
-#u
-#払う
-#はらう
-#to pay
-#
-#ru
-#決める
-#きめる
-#to decide
-#
-#irregular
-#練習する
-#れんしゅうする
-#to practice
-#
-#u
-#うそをつく
-#to tell a lie
-#
-#u
-#おなかがすく
-#to become hungry
-#
-#u
-#飼う
-#かう
-#to own (a pet)
-#
-#u
-#サボる
-#to cut classes
-#
-#u
-#取る
-#とる
-#to take (a class); to get (a grade)
-#
-#u
-#習う
-#ならう
-#to learn
-#
-#u
-#登る
-#のぼる
-#to climb
-#
-#u
-#働く
-#はたらく
-#to work
-#
-#ru
-#疲れる
-#つかれる
-#to get tired
-#
-#ru
-#やめる
-#to quit
-#
-#irregular
-#けんかする
-#to have a fight; to quarrel
-#
-#irregular
-#紹介する
-#しょうかいする
-#to introduce
-#
-#irregular
-#ダイエットする
-#to go on a diet
-#
-#irregular
-#遅刻する
-#ちこくする
-#to be late (for an appointment)
-#
-#irregular
-#留学する
-#りゅうがくする
-#to study abroad
-#
-#
-#u
-#風邪をひく
-#かぜをひく
-#to catch a cold
-#
-#u
-#興味がある
-#きょうみがある
-#to be interested (in ...)
-#
-#u
-#なくす
-#to lose
-#
-#u
-#のどが渇く
-#のどがかわく
-#to become thirsty
-#
-#u
-#熱がある
-#ねつがある
-#to have a fever
-#
-#ru
-#せきが出る
-#せきがでる
-#to cough
-#
-#ru
-#別れる
-#わかれる
-#to break up; to separate
-#
-#irregular
-#緊張する
-#きんちょうする
-#to get nervous
-#
-#irregular
-#心配する
-#しんぱいする
-#to worry
+
+u
+弾く
+ひく
+to play (a string instrument or piano)
+
+u
+もらう
+to get (from somebody)
+
+ru
+覚える
+おぼえる
+to memorize
+
+ru
+出る
+でる
+(1) to appear; to attend (2) to exit
+
+irregular
+運動する
+うんどうする
+to do physical exercises
+
+irregular
+散歩する
+さんぽする
+to take a walk
+
+u
+かかる
+to take (amount of time / money)
+
+u
+泊まる
+とまる
+to stay (at a hotel, etc.)
+
+u
+なる
+to become
+
+u
+払う
+はらう
+to pay
+
+ru
+決める
+きめる
+to decide
+
+irregular
+練習する
+れんしゅうする
+to practice
+
+u
+うそをつく
+to tell a lie
+
+u
+おなかがすく
+to become hungry
+
+u
+飼う
+かう
+to own (a pet)
+
+u
+サボる
+to cut classes
+
+u
+取る
+とる
+to take (a class); to get (a grade)
+
+u
+習う
+ならう
+to learn
+
+u
+登る
+のぼる
+to climb
+
+u
+働く
+はたらく
+to work
+
+ru
+疲れる
+つかれる
+to get tired
+
+ru
+やめる
+to quit
+
+irregular
+けんかする
+to have a fight; to quarrel
+
+irregular
+紹介する
+しょうかいする
+to introduce
+
+irregular
+ダイエットする
+to go on a diet
+
+irregular
+遅刻する
+ちこくする
+to be late (for an appointment)
+
+irregular
+留学する
+りゅうがくする
+to study abroad
+
+
+u
+風邪をひく
+かぜをひく
+to catch a cold
+
+u
+興味がある
+きょうみがある
+to be interested (in ...)
+
+u
+なくす
+to lose
+
+u
+のどが渇く
+のどがかわく
+to become thirsty
+
+u
+熱がある
+ねつがある
+to have a fever
+
+ru
+せきが出る
+せきがでる
+to cough
+
+ru
+別れる
+わかれる
+to break up; to separate
+
+irregular
+緊張する
+きんちょうする
+to get nervous
+
+irregular
+心配する
+しんぱいする
+to worry
+
+na-adjektiv
+嫌い
+きらい
+disgusted with; to dislike
+
+na-adjektiv
+きれい
+beautiful; clean
+
+na-adjektiv
+元気
+げんき
+healthy; energetic
+
+na-adjektiv
+静か
+しずか
+quiet
+
+na-adjektiv
+好き
+すき
+fond of; to like
+
+na-adjektiv
+大嫌い
+だいきらい
+to hate
+
+na-adjektiv
+大好き
+
+very fond of; to love
+
+na-adjektiv
+にぎやか
+lively
+
+na-adjektiv
+ハンサム
+handsome
+
+na-adjektiv
+暇
+ひま
+not busy; to have a lot of free time
+
+na-adjektiv
+大変
+たいへん
+tough (situation)
+
+na-adjektiv
+親切
+しんせつ
+kind
+
+na-adjektiv
+便利
+べんり
+convenient
+
+na-adjektiv
+上手
+じょうず
+skillful; good at...
+
+na-adjektiv
+下手
+へた
+clumsy; poor at...
+
+na-adjektiv
+有名
+ゆうめい
+famous
+
+na-adjektiv
+意地悪
+いじわる
+mean-spirited
+
+na-adjektiv
+簡単
+かんたん
+easy; simple
+
+na-adjektiv
+素敵
+すてき
+fantastic
+
+i-adjektiv
+新しい
+あたらしい
+new
+
+i-adjektiv
+暑い
+あつい
+hot (weather)
+
+i-adjektiv
+熱い
+あつい
+hot (objects)
+
+i-adjektiv
+忙しい
+いそがしい
+busy (people/days)
+
+i-adjektiv
+大きい
+おおきい
+large
+
+i-adjektiv
+面白い
+おもしろい
+interesting
+
+i-adjektiv
+怖い
+こわい
+frightening
+
+i-adjektiv
+寒い
+さむい
+cold (weather-not used for objects)
+
+i-adjektiv
+楽しい
+たのしい
+fun
+
+i-adjektiv
+小さい
+ちいさい
+small
+
+i-adjektiv
+つまらない
+boring
+
+i-adjektiv
+古い
+ふるい
+old (thing - not used for people)
+
+i-adjektiv
+難しい
+むずかしい
+difficult
+
+i-adjektiv
+やさしい
+easy (problem); kind (person)
+
+i-adjektiv
+安い
+やすい
+inexpensive; cheap (thing)
+
+i-adjektiv
+頭がいい
+あたまがいい
+bright; smart; clever
+
+i-adjektiv
+かっこいい
+great-looking
+
+i-adjektiv
+かわいい
+cute
+
+i-adjektiv
+背が高い
+せがたかい
+tall
+
+i-adjektiv
+背が低い
+せがひくい
+short (stature)
+
+i-adjektiv
+長い
+ながい
+long
+
+i-adjektiv
+早い
+はやい
+fast
+
+i-adjektiv
+短い
+みじかい
+short (length)
+
+i-adjektiv
+青い
+あおい
+blue
+
+i-adjektiv
+赤い
+あかい
+red
+
+i-adjektiv
+黒い
+くろい
+black
+
+i-adjektiv
+寂しい
+さびしい
+lonely
+
+i-adjektiv
+白い
+しろい
+white
+
+i-adjektiv
+若い
+わかい
+young
+
+i-adjektiv
+暖かい
+あたたかい
+warm
+
+i-adjektiv
+遅い
+おそい
+slow; late
+
+i-adjektiv
+涼しい
+すずしい
+cool (weather)
+
+i-adjektiv
+冷たい
+つめたい
+cold (thing/people)
+
+i-adjektiv
+眠い
+ねむい
+sleepy
+
+i-adjektiv
+甘い
+あまい
+sweet
+
+i-adjektiv
+痛い
+いたい
+hurt; painful
+
+i-adjektiv
+多い
+おおい
+there are many...
+
+i-adjektiv
+狭い
+せまい
+narrow; not spacious
+
+i-adjektiv
+都合が悪い
+つごうがわるい
+inconvenient; to have a scheduling conflict
+
+i-adjektiv
+悪い
+わるい
+bad
+
+
 
 #---------------------------------------------------
 #Genki II
