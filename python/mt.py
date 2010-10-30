@@ -22,12 +22,6 @@ class JPN:
     '''Super class'''
     def __init__(self):
         self.data=[]
-        self.index=0
-        self.iv=[]              # irregular verbs
-        self.uv=[]              # u verbs
-        self.ruv=[]             # ru verbs
-        self.ia=[]              # i adj
-        self.naa=[]             # na adj
 
     def add(self,x):
         if x[0]=='irregular':
@@ -153,22 +147,7 @@ class naa(Word):                 # na adj
     def gen_table(self):
         s = na_table_template.safe_substitute(self.conjugation)
         out.write(s)
-
 #-------------------------------------------------------------------
-def width(string):
-    return sum(1+(unicodedata.east_asian_width(unicode(c)) in "WF")
-        for c in string)
-
-def pad(array, index, s):
-    '''pad'''
-    fill=0
-    for i in index:
-        if width(array[i]) > fill:
-            fill=width(array[i])
-    for i in index:
-        array[i] = array[i] + ' '*((fill+1)-width(array[i]))
-    return fill
-
 def make_latex_section(s):
     '''\section{s}'''
     out.write('\n')
@@ -180,7 +159,6 @@ def make_latex_subsection(s):
     out.write('\n')
     out.write(r'\subsection{%s}' % (s))
     out.write('\n')
-
 ###############################################################
 
 db = JpnDB()
