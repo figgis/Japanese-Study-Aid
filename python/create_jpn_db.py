@@ -10,7 +10,7 @@ out = codecs.getwriter('utf-8')(sys.stdout)
 
 class JpnDB:
     '''data-base'''
-    def __init__(self,f_name='verb_list'):
+    def __init__(self,f_name='list.txt'):
         self.list=[]
         self.f_name=f_name
 

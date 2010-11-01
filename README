@@ -1,7 +1,7 @@
 OK, lets face it, Japanese is hard!
 So I figured I need to collect stuff into a format that allows me to
 practice on the bus, train, while watching TV, drinking beer and so
-on. 
+on.
 
 First attempt was made using sphinx and python. The html-looks great
 but the latex/pdf-generation failed due to that sphinx doesn't
@@ -12,39 +12,7 @@ looks, well perhaps not perfect, but its a start at least and it
 allows me to bring the printed version with me; I can even cut out
 the different tables and use them as flash-cards...
 
-./python
-    mt.py
-    short for MakeTable, main program that generates
-    LaTeX-tables. 
-
-    create_jpn_db.py
-    reads list.txt and creates the structure.
-
-    create_i_adj.py
-    helper function to automatically generate i-adjective from the
-    stem of the word.
-
-    latex_template.py
-    well, the templates.
-
-    list.txt
-    This is where all the words are entered.
-
-./doc
-    jpn.pdf
-    the generated document
-
 generate doc with:
 $ cd python
 $ make
 $ make view
-
-TODO (in no particular order)
-=============================
-* Add more verbs/adjectives etc.
-* Auto-generate conjugation for as much as possible instead of
-  writing it by hand!
-* Some more clever latex trix to generate a flashcard that when
-  folded in the middle contains the kanji/kana dictionary form
-  and on the other side the conjugations
-

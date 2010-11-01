@@ -9,9 +9,9 @@ copy:
 	cp $(TEXFILE:.tex=.pdf) ../doc/jpn.pdf
 
 view:
-	evince $(TEXFILE:.tex=.pdf)
+	evince $(TEXFILE:.tex=.pdf) &
 
 clean :
-	rm -f $(TEXFILE:.tex=*) *~ 
+	rm -f $(TEXFILE:.tex=*) *~ *.pyc
 
 

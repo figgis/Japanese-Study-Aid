@@ -24,27 +24,25 @@ def conjugate_verb(kind, v):
 
     if kind == 'irregular':
         if v == u'来る':
-            verb['pres_plain_pos'] = v
-            verb['pres_polite_neg'] = v[:-1] + u'ない'
             #--------
             # present positive
             verb['pres_plain_pos'] = v
-            verb['pres_polite_pos'] = v[:-1] + u'ない'
+            verb['pres_polite_pos'] = u'来ます'
             #--------
             # present negative
-            verb['pres_plain_neg'] = v[:-1] + u'ない'
-            verb['pres_polite_neg'] = v[:-1] + u'なかった'
+            verb['pres_plain_neg'] = u'来ない'
+            verb['pres_polite_neg'] = u'来ません'
             #--------
             # past positive
-            verb['past_plain_pos'] = v[:-1] + u'た'
-            verb['past_polite_pos'] = v[:-1] + u'ました'
+            verb['past_plain_pos'] = u'来た'
+            verb['past_polite_pos'] = u'来ました'
             #--------
             # past negative
-            verb['past_plain_neg'] = v[:-1] + u'なかった'
-            verb['past_polite_neg'] = v[:-1] + u'ませんでした'
+            verb['past_plain_neg'] = u'来なかった'
+            verb['past_polite_neg'] = u'来ませんでした'
             #--------
             # te_form
-            verb['te_form'] = v[:-1] + u'て'
+            verb['te_form'] = u'来て'
         elif v == u'する':
             #--------
             # present positive
@@ -65,28 +63,46 @@ def conjugate_verb(kind, v):
             #--------
             # te_form
             verb['te_form'] = u'して'
-        elif v == u'勉強する':
-            verb['pres_plain_pos'] = v
-            verb['pres_polite_neg'] = v[:-1] + u'ない'
+        elif v[-2:] == u'する':
             #--------
             # present positive
             verb['pres_plain_pos'] = v
-            verb['pres_polite_pos'] = v[:-1] + u'ない'
+            verb['pres_polite_pos'] = v[:-2] + u'します'
             #--------
             # present negative
-            verb['pres_plain_neg'] = v[:-1] + u'ない'
-            verb['pres_polite_neg'] = v[:-1] + u'なかった'
+            verb['pres_plain_neg'] = v[:-2] + u'しない'
+            verb['pres_polite_neg'] = v[:-2] + u'しません'
             #--------
             # past positive
-            verb['past_plain_pos'] = v[:-1] + u'た'
-            verb['past_polite_pos'] = v[:-1] + u'ました'
+            verb['past_plain_pos'] = v[:-2] + u'した'
+            verb['past_polite_pos'] = v[:-2] + u'しました'
             #--------
             # past negative
-            verb['past_plain_neg'] = v[:-1] + u'なかった'
-            verb['past_polite_neg'] = v[:-1] + u'ませんでした'
+            verb['past_plain_neg'] = v[:-2] + u'しなかった'
+            verb['past_polite_neg'] = v[:-2] + u'しませんでした'
             #--------
             # te_form
-            verb['te_form'] = v[:-1] + u'て'
+            verb['te_form'] = v[:-2] + u'して'
+        elif v[-2:] == u'くる':
+            #--------
+            # present positive
+            verb['pres_plain_pos'] = v
+            verb['pres_polite_pos'] = v[:-2] + u'きます'
+            #--------
+            # present negative
+            verb['pres_plain_neg'] = v[:-2] + u'こない'
+            verb['pres_polite_neg'] = v[:-2] + u'きません'
+            #--------
+            # past positive
+            verb['past_plain_pos'] = v[:-2] + u'きた'
+            verb['past_polite_pos'] = v[:-2] + u'きました'
+            #--------
+            # past negative
+            verb['past_plain_neg'] = v[:-2] + u'こなかった'
+            verb['past_polite_neg'] = v[:-2] + u'きませんでした'
+            #--------
+            # te_form
+            verb['te_form'] = v[:-2] + u'きて'
         else:
             pass
             #print 'wrong -irregular'
@@ -99,7 +115,7 @@ def conjugate_verb(kind, v):
         #--------
         # present negative
         verb['pres_plain_neg'] = v[:-1] + u'ない'
-        verb['pres_polite_neg'] = v[:-1] + u'なかった'
+        verb['pres_polite_neg'] = v[:-1] + u'ません'
         #--------
         # past positive
         verb['past_plain_pos'] = v[:-1] + u'た'
@@ -197,19 +213,19 @@ def conjugate_verb(kind, v):
             #--------
             # present positive
             verb['pres_plain_pos'] = v
-            verb['pres_polite_pos'] = v[:-1] + u'みます'
+            verb['pres_polite_pos'] = v[:-1] + u'びます'
             #--------
             # present negative
-            verb['pres_plain_neg'] = v[:-1] + u'まない'
-            verb['pres_polite_neg'] = v[:-1] + u'みません'
+            verb['pres_plain_neg'] = v[:-1] + u'ばない'
+            verb['pres_polite_neg'] = v[:-1] + u'びません'
             #--------
             # past positive
             verb['past_plain_pos'] = v[:-1] + u'んだ'
-            verb['past_polite_pos'] = v[:-1] + u'みました'
+            verb['past_polite_pos'] = v[:-1] + u'びました'
             #--------
             # past negative
-            verb['past_plain_neg'] = v[:-1] + u'まなかった'
-            verb['past_polite_neg'] = v[:-1] + u'みませんでした'
+            verb['past_plain_neg'] = v[:-1] + u'ばなかった'
+            verb['past_polite_neg'] = v[:-1] + u'びませんでした'
             #--------
             # te_form
             verb['te_form'] = v[:-1] + u'んで'
@@ -292,14 +308,20 @@ def conjugate_verb(kind, v):
             verb['past_polite_neg'] = v[:-1] + u'しませんでした'
             #--------
             # te_form
-            verb['te_form'] = v[:-1] + u'いで'
+            verb['te_form'] = v[:-1] + u'して'
         else:
             out.write("wrong kind: %s, v:%s\n" % (kind, v))
     else:
         print 'tilt'
 
     # handle some special cases
-    #if kind is 'U':
+    if kind is 'u':
+        if v == u'行く':
+            verb['te_form'] = v[:-1] + u'って'
+            verb['past_plain_pos'] = v[:-1] + u'った'
+        elif v == u'ある':
+            verb['pres_plain_neg'] = v[:-1] + u'ない'
+            verb['past_plain_neg'] = v[:-1] + u'なかった'
     #    あう， いく
 
     return verb
