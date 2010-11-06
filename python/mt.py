@@ -12,7 +12,6 @@ from adjective_conjugator import *
 
 out = codecs.getwriter('utf-8')(sys.stdout)
 
-
 #Helper function
 def printheader(word):
     '''generate a nice header string'''
@@ -23,24 +22,23 @@ class JPN:
     def __init__(self):
         self.data=[]
 
+    def __selector(self, kind, array):
+        s  = {'irregular'  : verb(kind, array),
+              'u'          : verb(kind, array),
+              'ru'         : verb(kind, array),
+              'na-adjektiv': naa(kind, array),
+              'i-adjektiv' : ia(kind, array)}
+
+        ret = None
+
+        try:
+            ret = s[kind]
+        except KeyError:
+            print 'Illegal type'
+        return ret
+
     def add(self,x):
-        if x[0]=='irregular':
-            tmp=verb(x[0],x)
-            self.data.append(tmp)
-        elif x[0]=='u':
-            tmp=verb(x[0],x)
-            self.data.append(tmp)
-        elif x[0]=='ru':
-            tmp=verb(x[0],x)
-            self.data.append(tmp)
-        elif x[0]=='na-adjektiv':
-            tmp=naa(x[0],x)
-            self.data.append(tmp)
-        elif x[0]=='i-adjektiv':
-            tmp=ia(x[0],x)
-            self.data.append(tmp)
-        else:
-            pass
+        self.data.append(self.__selector(x[0], x))
 
     def show(self):
         for i in self.data:
@@ -99,7 +97,14 @@ class JPN:
 class Word():                   # base class
     '''word type'''
     def __init__(self,kind,data):
-        pass
+        self.kind=kind
+        self.data=data
+        if 'adjektiv' in self.kind:
+            self.conjugation= conjugate_adjective(kind, data[1])
+        else:
+            self.conjugation = conjugate_verb(kind, data[1])
+        self.conjugation['title'] = self.conjugation['dict_form']
+        self.conjugation['head'] = data[-2] + u' - ' + data[-1]
 
     def show(self):
         #printheader(self.kind)
@@ -110,40 +115,18 @@ class Word():                   # base class
 #-------------------------------------------------------------------
 class verb(Word):               # verbs
     '''derived'''
-    def __init__(self,kind,data):
-        self.kind=kind
-        self.data=data
-        self.conjugation = conjugate_verb(kind, data[1])
-        self.conjugation['title'] = self.conjugation['dict_form']
-        self.conjugation['head'] = data[-2] + u' - ' + data[-1]
-
     def gen_table(self):
         s = verb_table_template.safe_substitute(self.conjugation)
-        #s = verb_table_template.substitute(self.conjugation)
         out.write(s)
 #-------------------------------------------------------------------
 class ia(Word):                 # i adj
     '''derived'''
-    def __init__(self,kind,data):
-        self.kind=kind
-        self.data=data
-        self.conjugation= conjugate_adjective(kind, data[1])
-        self.conjugation['title'] = self.conjugation['dict_form']
-        self.conjugation['head'] = data[-2] + u' - ' + data[-1]
-
     def gen_table(self):
         s = i_table_template.safe_substitute(self.conjugation)
         out.write(s)
 #-------------------------------------------------------------------
 class naa(Word):                 # na adj
     '''derived'''
-    def __init__(self,kind,data):
-        self.kind=kind
-        self.data=data
-        self.conjugation= conjugate_adjective(kind, data[1])
-        self.conjugation['title'] = self.conjugation['dict_form']
-        self.conjugation['head'] = data[-2] + u' - ' + data[-1]
-
     def gen_table(self):
         s = na_table_template.safe_substitute(self.conjugation)
         out.write(s)
