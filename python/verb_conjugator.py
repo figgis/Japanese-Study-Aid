@@ -6,7 +6,7 @@ import sys
 
 out = codecs.getwriter('utf-8')(sys.stdout)
 
-def conjugate_verb(kind, v):
+def conjugate_verb(kind=None, v=None):
     """stuff"""
     verb = {'dict_form'       : None,
             'pres_plain_pos'  : None,
@@ -19,6 +19,8 @@ def conjugate_verb(kind, v):
             'past_polite_neg' : None,
             'te_form'         : None,
             }
+
+#    print kind, v
 
     verb['dict_form'] = v
 
@@ -315,13 +317,21 @@ def conjugate_verb(kind, v):
         print 'tilt'
 
     # handle some special cases
-    if kind is 'u':
+    if kind == 'u':
         if v == u'行く':
             verb['te_form'] = v[:-1] + u'って'
             verb['past_plain_pos'] = v[:-1] + u'った'
         elif v == u'ある':
             verb['pres_plain_neg'] = v[:-1] + u'ない'
             verb['past_plain_neg'] = v[:-1] + u'なかった'
+        elif v[-2:] == u'いく':
+            verb['te_form'] = v[:-1] + u'って'
+            verb['past_plain_pos'] = v[:-1] + u'った'
+        elif v[-2:] == u'ある':
+            verb['pres_plain_neg'] = v[:-2] + u'ない'
+            verb['past_plain_neg'] = v[:-2] + u'なかった'
+
     #    あう， いく
+
 
     return verb

@@ -11,7 +11,7 @@ out = codecs.getwriter('utf-8')(sys.stdout)
 class JpnDB:
     '''data-base'''
     def __init__(self,f_name='list.txt'):
-        self.list=[]
+        self.words=[]
         self.f_name=f_name
 
         self.__populate()
@@ -24,7 +24,7 @@ class JpnDB:
             if '#' in line: # skip comments
                 continue
             if not line.strip(): # empty lines indicates new block/EOB
-                self.list.append(tmp)
+                self.words.append(tmp)
                 tmp=[]
                 continue
             tmp.append(unicode(line.strip(),'utf-8'))
@@ -33,14 +33,14 @@ class JpnDB:
         #remove empty arrays
         while True:
             try:
-                self.list.remove([])
+                self.words.remove([])
             except ValueError:
                 break
 
     def verify(self):
-        for i in self.list:
+        for i in self.words:
             out.write('%s\t%s\n' % (len(i), i[-1]))
-        out.write('\nTotal number of items: %d\n' % len(self.list))
+        out.write('\nTotal number of items: %d\n' % len(self.words))
 
 def main():
     x=JpnDB()

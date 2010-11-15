@@ -270,11 +270,6 @@ u
 ふとる
 to gain weight
 
-u
-太っています
-ふとっています
-to be on the heavy side
-
 ru
 めがねをかける
 to put on glasses

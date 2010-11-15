@@ -16,6 +16,7 @@ out = codecs.getwriter('utf-8')(sys.stdout)
 def printheader(word):
     '''generate a nice header string'''
     out.write("\n%s\n%s\n" % (word, '-' * len(word)))
+
 #-------------------------------------------------------------------
 class JPN:
     '''Super class'''
@@ -23,19 +24,11 @@ class JPN:
         self.data=[]
 
     def __selector(self, kind, array):
-        s  = {'irregular'  : verb(kind, array),
-              'u'          : verb(kind, array),
-              'ru'         : verb(kind, array),
-              'na-adjektiv': naa(kind, array),
-              'i-adjektiv' : ia(kind, array)}
-
-        ret = None
-
         try:
-            ret = s[kind]
+            f = selector[kind]
         except KeyError:
             print 'Illegal type'
-        return ret
+        return f(kind, array)
 
     def add(self,x):
         self.data.append(self.__selector(x[0], x))
@@ -142,12 +135,19 @@ def make_latex_subsection(s):
     out.write('\n')
     out.write(r'\subsection{%s}' % (s))
     out.write('\n')
+
 ###############################################################
+
+selector = {'irregular'  : verb,
+            'u'          : verb,
+            'ru'         : verb,
+            'na-adjektiv': naa,
+            'i-adjektiv' : ia}
 
 db = JpnDB()
 
 x = JPN()
-for i in db.list:
+for i in db.words:
     x.add(i)
 
 x.make_latex()
